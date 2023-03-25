@@ -4,8 +4,13 @@ const qtdPosts = document.querySelector("#qtdPosts")
 
 async function carregarPosts() {
     postBlock.innerHTML = '';
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-    const data = await res.json();
+    let msg = 'carregando...'
+    postBlock.innerText = msg
+    const posts = await fetch('https://jsonplaceholder.typicode.com/posts');
+    postBlock.innerHTML = '';
+    const coments = await fetch('https://jsonplaceholder.typicode.com/comments')
+    const dataPosts = await posts.json();
+   
 
     const validarInput = ()=>{
         if (qtdPosts.value < 0) {
@@ -20,7 +25,7 @@ async function carregarPosts() {
     }
     
    // limita a quantidade de posts a serem exibidos
-    const postsLimitados = data.slice(0, validarInput());
+    const postsLimitados = dataPosts.slice(0, validarInput());
 
     // percorre cada post limitado no array e exibe na tela
     postsLimitados.forEach(post => {
@@ -29,7 +34,7 @@ async function carregarPosts() {
         const body = document.createElement('p');
         const userId = document.createElement('p');
 
-        userId.innerHTML = `Id: ${post.id}`;
+        userId.innerHTML = `Post: ${post.id}`;
         title.innerText = `Titulo:\n ${post.title}`;
         body.innerText = post.body;
 
