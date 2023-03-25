@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: rgb(34, 33, 33);
+    font-family: 'Inter', sans-serif;
+}    
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: auto;
+    height: auto;
+    max-height: auto;
+    overflow: auto;
+}
+
+button{
+    background-color: rgb(11, 221, 158);
+    opacity: 0.85;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+button:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+#posts{
+    padding: 1rem;
+    text-align: left;
+    gap: 0.7rem;
+
+}
+
+#menu{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    gap: 1rem;
+    align-items: center;
+}
+
+#menu input{
+    background-color: #fff;
+    color: black;
+    border-radius: 0.6rem;
+    border: none;
+    padding: 0.6rem 1rem;
+    outline: none;
+}
+
+#menu input::placeholder {
+    color: black;
+}
+
+#posts div{
+    margin-bottom: 1.5rem;
+    background: #fff;
+    border-radius: 0.6rem;
+    padding: 0.8rem 0.8rem;
+}
+
+#posts div h2, p{
+    font-size: 18px;
+    padding: 0.5rem 1rem;
+
+}
+
+#posts div h2 {
+    color: rgb(11, 221, 158);
+
+}
